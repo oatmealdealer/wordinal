@@ -83,7 +83,7 @@ class Game:
         if len(guess) != 5:
             fprint(f"{ansi('red', guess)} is not 5 letters.")
             return False
-        elif HARD and any(guessed_letters := [char for char in guess if char not in self.remaining_letters]):
+        elif self.hard_mode and any(guessed_letters := [char for char in guess if char not in self.remaining_letters]):
             fprint(
                 f"{ansi('cyan', 'Letters: ')}{ansi('red', ', '.join(guessed_letters))}{ansi('cyan', ' have already been guessed!')}"
             )
